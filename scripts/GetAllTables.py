@@ -2,7 +2,8 @@ import pandas as pd
 import os
 import pandas as pds
 
-pds_df = pds.read_html('data/P6E.htm')
+pds_df_input = input("Provide the relative path with file name... :  ")
+pds_df = pds.read_html(pds_df_input)
 
 table_no = 0
 for table_of_interest in pds_df:
