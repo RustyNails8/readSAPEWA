@@ -21,10 +21,24 @@ for DIV in EXSOUP.find_all('div', 'sa-text-level1') :  # Find div with class
 """
 
 HEAD1 = EXSOUP('h1')
+HEAD2 = EXSOUP('h2')
+HEAD3 = EXSOUP('h3')
 DIV1 = EXSOUP('div', 'sa-text-level1')
+DIV2 = EXSOUP('div', 'sa-text-level2')
+DIV3 = EXSOUP('div', 'sa-text-level3')
 
 print("\n")
 for i in range(0, len(HEAD1)):
     IMG1 = DIV1[i].find('img', alt=True)
     if IMG1 is not None:
         print(IMG1['alt'], "||", HEAD1[i].getText())
+
+for j in range(0, len(HEAD2)):
+   	IMG2 = DIV2[j].find('img', alt=True)
+   	if IMG2 is not None:
+   		print("\t" + IMG2['alt'], "||", HEAD2[j].getText())
+
+for k in range(0, len(HEAD3)):
+   	IMG3 = DIV3[k].find('img', alt=True)
+   	if IMG3 is not None:
+   		print("\t\t" + IMG3['alt'], "||", HEAD3[k].getText())
